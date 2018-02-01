@@ -159,6 +159,15 @@
     prefix: "_dnghtml"
     body: "dangerouslySetInnerHTML={{__html: ${1}}}"
 
+  # React Native
+  "React Native: Empty Component":
+    prefix: "_rncer"
+    body: "// @flow\n\nimport React, { Component } from 'react';\nimport { StyleSheet, View } from 'react-native';\n\nconst styles = StyleSheet.create({\n\tcontainer: {\n\t\tflex: 1,\n\t},\n});\n\ntype PropsType = {};\n\nclass ${1} extends Component<PropsType> {\n\trender() {\n\t\treturn <View style=\{styles.container\} />;\n\t}\n}\n\nexport default ${1};"
+
+  "React Native: Stateless Component":
+    prefix: "_rnces"
+    body: "// @flow\n\nimport React from 'react';\nimport { StyleSheet, View } from 'react-native';\n\nconst styles = StyleSheet.create({\n\tcontainer: {\n\t\tflex: 1,\n\t},\n});\n\ntype PropsType = {};\n\nconst ${1} = (props: PropsType) => <View />;\n\nexport default ${1};"
+
   # PropTypes
   "React: PropType array":
     prefix: '_pta',
